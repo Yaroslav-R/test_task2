@@ -114,3 +114,16 @@ TEST(move_cursor, sute5) {
     EXPECT_EQ(k, 2);
     remove_all(txt);
 }
+
+TEST(move_cursor, sute6) {
+    text txt = create_text();
+    // load(txt, path_to_file);
+    testing::internal::CaptureStderr();
+
+    move(txt, 2, 30);
+        
+    std::string output = testing::internal::GetCapturedStderr();
+    EXPECT_EQ(output, "There are already no any lines in the text!\n");
+
+    remove_all(txt);
+}
