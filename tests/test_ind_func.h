@@ -35,13 +35,15 @@ TEST(showlastnonspace, suite2) {
 TEST(showlastnonspace, suite3) {
     text txt = create_text();
     // fprintf(stderr,"length = %d\n", txt -> length);
-    testing::internal::CaptureStdout();
+    testing::internal::CaptureStderr();
 
     showlastnonspace(txt);
     
     std::string output = testing::internal::GetCapturedStderr();
     
     EXPECT_EQ(output, "There are already no any lines in the text!\n");
+
+    remove_all(txt);
 }
 
 TEST(cb, suite1) {
