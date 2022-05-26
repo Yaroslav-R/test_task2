@@ -18,6 +18,11 @@
  */
 void cb(text txt)
 {
+    if (txt == NULL || txt->length == 0) {
+        fprintf(stderr, "There are already no any lines in the text!\n");
+        return;
+    }
+    
     if (txt -> cursor -> line == NULL) return;
 
     if (txt -> cursor -> line == txt -> begin) return;

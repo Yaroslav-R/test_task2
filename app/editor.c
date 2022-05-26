@@ -107,7 +107,7 @@ int main()
                 continue;
             }
             if (input_string(txt, arg)) {
-                fprintf(stderr, "so big\n");
+                fprintf(stderr, "Some problem\n");
             }
             
 

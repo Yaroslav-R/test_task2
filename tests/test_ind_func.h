@@ -32,6 +32,18 @@ TEST(showlastnonspace, suite2) {
     EXPECT_EQ(output, "olabd\n");
 }
 
+TEST(showlastnonspace, suite3) {
+    text txt = create_text();
+    // fprintf(stderr,"length = %d\n", txt -> length);
+    testing::internal::CaptureStdout();
+
+    showlastnonspace(txt);
+    
+    std::string output = testing::internal::GetCapturedStderr();
+    
+    EXPECT_EQ(output, "There are already no any lines in the text!\n");
+}
+
 TEST(cb, suite1) {
     text txt = create_text();
     // testing::internal::CaptureStdout();
@@ -54,6 +66,41 @@ TEST(cb, suite1) {
         cnt++;
     }
 
+}
+
+TEST(cb, suite2) {
+    text txt = create_text();
+    // testing::internal::CaptureStdout();
+    load(txt, "./tests/test_cb_input.txt");
+    move(txt, 0, 0);
+    cb(txt);
+    save(txt, "./tests/test_cb_output.txt");
+    
+    int k = 0;
+    char arr[4] = {'1', '2', '3', '4'};
+
+    std::ifstream f;
+    f.open("./tests/test_cb_output.txt");
+    std::string s;
+
+    int cnt = 0;
+    while (std::getline(f, s))
+    {
+        EXPECT_EQ(s[0], arr[cnt]);
+        cnt++;
+    }
+
+}
+
+TEST(cb, suite3) {
+    text txt = create_text();
+
+    testing::internal::CaptureStderr();
+
+    cb(txt);
+    
+    std::string output = testing::internal::GetCapturedStderr();
+    EXPECT_EQ(output, "There are already no any lines in the text!\n");
 }
 
 TEST(show, suite1) {
@@ -121,11 +168,11 @@ TEST(input_string, suite1) {
 TEST(input_string, suite2) {
     text txt = create_text();
     
-    
-    
     load(txt, path_to_file);
+
     char *s;
     s = (char*)malloc(sizeof(char) * 256);
+    
     for (int i = 0; i < MAXLINE + 1; i++)
     {
         s[i] = 't';
@@ -133,12 +180,25 @@ TEST(input_string, suite2) {
     s[256] = '\0';
 
     move(txt, 0, 1);
+    int code = input_string(txt, s);
+    // testing::internal::CaptureStderr();
+    EXPECT_EQ(code, 1);
+
+
+    remove_all(txt);
+}
+
+TEST(input_string, suite3) {
+    text txt = create_text();
+    
+    char s[] = "hello";
     
     testing::internal::CaptureStderr();
     input_string(txt, s);
     
     std::string output = testing::internal::GetCapturedStderr();
-    EXPECT_EQ(output, "so big\n");
+    EXPECT_EQ(output, "There are already no any lines in the text!\n");
 
     remove_all(txt);
 }
+

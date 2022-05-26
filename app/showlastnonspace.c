@@ -10,6 +10,7 @@
 #include <string.h>
 #include "common.h"
 #include "text.h"
+#include "_text.h"
 
 /**
  * выводит последний непустой символ строки
@@ -39,6 +40,10 @@ void print_last_nonspace(int index, char *line, int cursor, void *data) {
  */
 void showlastnonspace(text txt)
 {
+    if (txt == NULL || txt -> length == 0) {
+        fprintf(stderr, "There are already no any lines in the text!\n");
+        return;
+    }
 
     process_forward(txt, print_last_nonspace, NULL);
 
