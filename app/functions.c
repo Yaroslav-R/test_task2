@@ -18,7 +18,6 @@
  * Преобразует пару чисел в строке в два целых неотрицательных числа
  */
 int parse_convert(char *str, int* out) {
-    // printf("parse called with s =%s*\n", str);
     out[0] = out[1] = 0;
     int cnt = 0;
     int i = 0;
@@ -27,10 +26,9 @@ int parse_convert(char *str, int* out) {
     for (i = 1; i < len; i++) {
         cnt += (str[i - 1] == ' ' && str[i] >= '0' && str[i] <= '9');
     }
-    if (cnt != 1) {
-        // fprintf(stderr, "bad cnt\n");
+    if (cnt != 1) 
         return ERROR;
-    }
+    
 
     for (i = 0; str[i] != ' '; i++) {
         if (str[i] < '0' || str[i] > '9') 

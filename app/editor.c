@@ -100,15 +100,16 @@ int main()
             continue;
         }
 
-    // для вставки строки от курсора i строка с контролем переполнения;
+    /* для вставки строки от курсора i строка с контролем переполнения */
         if (strcmp(cmd, "is") == 0) {
             if ((arg = strtok(NULL, " \n")) == NULL) {
                 fprintf(stderr, "Usage: is string\n");
-            } else {
-                if (input_string(txt, arg)) {
-                    fprintf(stderr, "so big\n");
-                }
+                continue;
             }
+            if (input_string(txt, arg)) {
+                fprintf(stderr, "so big\n");
+            }
+            
 
             continue;
         }

@@ -32,10 +32,9 @@ int move(text txt, int line, int pos)
     while (current) {
         if (index == line) {
             if (pos >= (int)strlen(current -> contents) || pos < 0) {
-                // fprintf(stderr, "1Usage: m line index\n");
-                
                 return 1;
-            } else {
+            } 
+            else {
                 txt->cursor->line = current;
                 txt->cursor->position = pos;
                 
@@ -45,7 +44,7 @@ int move(text txt, int line, int pos)
         current = current->next;
         index++;
     }
-    // fprintf(stderr, "1Usage: m line index\n");
+    
     return 1;
 }
 

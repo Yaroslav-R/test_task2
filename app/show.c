@@ -33,14 +33,11 @@ static void show_line(int index, char *contents, int cursor, void *data)
     
     /* Декларируем неиспользуемые параметры */
     UNUSED(index);
-    //UNUSED(cursor);
     UNUSED(data);
     
-    // cursor -= 1;
+    int slen = strlen(contents);
+    int i = 0;
 
-    int slen = strlen(contents),
-        i = 0;
-    
     for (i = 0; i < slen; i++) {
         if (i == cursor) printf("|");
 

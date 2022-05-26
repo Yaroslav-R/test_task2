@@ -22,7 +22,6 @@ void cb(text txt)
 
     if (txt -> cursor -> line == txt -> begin) return;
     
-    // process_forward(txt, print_last_nonspace, NULL);
     node *cur = txt -> begin;
 
     while (cur != NULL) {

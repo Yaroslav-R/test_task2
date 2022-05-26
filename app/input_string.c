@@ -16,26 +16,28 @@
  * Записывает строку в конец файла
  */
 void input_line(int index, char *line, int cursor, void *data) {
+    UNUSED(index);
+
     if (cursor == -1) 
         return;
     
     char **tmp = (char**)data;
     char *str = (char*)tmp[1];
     char *code = (char*)tmp[0];
-    // printf("%d\n", (int)*code);
+
     size_t cur_size = strlen(line);
     size_t str_size = strlen(str);
     size_t next_size = cur_size + str_size;
 
     if (next_size >= MAXLINE) {
         *code = 1;
-        // printf("change code\n");
         return;
     }
     
     char buff[MAXLINE] = "";
     
-    size_t i, j;
+    size_t i;
+    size_t j;
 
     for (i = 0; i < (size_t)cursor; i++) 
         buff[i] = line[i];
@@ -52,8 +54,6 @@ void input_line(int index, char *line, int cursor, void *data) {
         line[i] = buff[i];
     }
 
-    UNUSED(index);
-    // UNUSED(cursor);
     
     
     return;

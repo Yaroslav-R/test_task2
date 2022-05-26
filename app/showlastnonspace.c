@@ -19,12 +19,11 @@ void print_last_nonspace(int index, char *line, int cursor, void *data) {
     UNUSED(index);
     UNUSED(cursor);
     UNUSED(data);
-    
-    size_t i;
+
     size_t line_size = strlen(line);
     char last = ' ';
 
-    for (i = 0; i < line_size; i++) {
+    for (size_t i = 0; i < line_size; i++) {
         if (line[i] != ' ' && line[i] != '\n') 
             last = line[i];
     }

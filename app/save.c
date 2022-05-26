@@ -15,16 +15,10 @@
  * Записывает строку в конец файла
  */
 void print_line(int index, char *line, int cursor, void *data) {
-    
     UNUSED(index);
     UNUSED(cursor);
-
     
     FILE *f = (FILE*)data;
-    
-    size_t line_size = strlen(line);
-    // line[line_size] = '\n';
-
 
     if (fprintf(f, "%s", line) < 0) {
         printf("The line cannot be wrote\n");
@@ -36,8 +30,7 @@ void print_line(int index, char *line, int cursor, void *data) {
 /**
  * Сохраняет содержимое в указанный файл
  */
-void save(text txt, char *filename)
-{
+void save(text txt, char *filename) {
     FILE *f;
     
     /* Открываем файл для чтения, контролируя ошибки */
