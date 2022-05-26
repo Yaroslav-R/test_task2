@@ -6,8 +6,8 @@
 
 /* using namespace testing; */
 extern "C" {
-#include "../app/src/common.h"
-#include "../app/src/text/text.h"
+#include "../app/common.h"
+#include "../app/text.h"
 }
 
 TEST(test_save, suite1) {

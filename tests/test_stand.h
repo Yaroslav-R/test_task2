@@ -6,9 +6,9 @@
 
 /* using namespace testing; */
 extern "C" {
-#include "../app/src/common.h"
-#include "../app/src/text/text.h"
-#include "../app/src/text/_text.h"
+#include "../app/common.h"
+#include "../app/text.h"
+#include "../app/_text.h"
 }
 
 static char path_to_file[] = "./tests/test_input1.txt";

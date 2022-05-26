@@ -3,7 +3,7 @@
 
 /* using namespace testing; */
 extern "C" {
-#include "../app/src/common.h"
+#include "../app/common.h"
 }
 
 TEST(testFunctionsParse, suite1) {
