@@ -2,16 +2,14 @@ TEMPLATE = app
 CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
-OBJECTS_DIR += ./src \
-    ./src/text
+OBJECTS_DIR += ./src
 
-SOURCES += ./src/*.c \
-    ./src/text/*.c
+SOURCES += ./*.c 
 
 
 
 HEADERS += \
-    ./src/*.h
+    ./*.h
 
 QMAKE_CFLAGS += -Wall -Wextra
 

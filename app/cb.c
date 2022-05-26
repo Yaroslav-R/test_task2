@@ -9,8 +9,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "common.h"
-#include "text/text.h"
-#include "text/_text.h"
+#include "text.h"
+#include "_text.h"
 
 /**
  * для вывода каждого последнего непробельного символа строки 

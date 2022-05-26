@@ -10,7 +10,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "common.h"
-#include "text/text.h"
+#include "text.h"
 
 /**
  * Записывает строку в конец файла

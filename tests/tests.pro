@@ -20,21 +20,22 @@ HEADERS +=     test_functions.h \
     test_save.h \
     test_stand.h \
     test_ind_func.h \
-    ../app/src/common.h \
-    ../app/src/text/*.h \
+    ../app/*.h \
     tst_stdout.h
 
 SOURCES +=     main.cpp \
-    ../app/src/cb.c \
-    ../app/src/functions.c \
-    ../app/src/input_string.c \
-    ../app/src/load.c \
-    ../app/src/move.c \
-    ../app/src/save.c \
-    ../app/src/showlastnonspace.c \
-    ../app/src/show.c \
-    ../app/src/text/*.c
-
+    ../app/append_line.c \
+    ../app/cb.c \
+    ../app/create_text.c \
+    ../app/functions.c \
+    ../app/input_string.c \
+    ../app/load.c \
+    ../app/move.c \
+    ../app/process_forward.c \ 
+    ../app/remove_all.c \
+    ../app/save.c \
+    ../app/show.c \
+    ../app/showlastnonspace.c
 
 
 
