@@ -20,11 +20,9 @@ TEST(test_save, suite1) {
     FILE *in  = fopen(path_for_load,  "r");
     FILE *out = fopen(path_for_save, "r");
     if (in == NULL) {
-        // printf("problem with in file\n");
         FAIL();
     }
     if (out == NULL) {
-        // printf("problem with out file\n");
         FAIL();
     }
     int cnt = 0;
@@ -34,14 +32,12 @@ TEST(test_save, suite1) {
         ch2 = fgetc(out);
         cnt++;
         if (ch1 != ch2) {
-            // printf("cnt = %d\n", cnt);
             fclose(in); fclose(out);
             FAIL();
         }
 
     }
-    // printf("%d good ch\n", cnt);
-
+    
     fclose(in);
     fclose(out);
     

@@ -117,7 +117,6 @@ TEST(move_cursor, sute5) {
 
 TEST(move_cursor, sute6) {
     text txt = create_text();
-    // load(txt, path_to_file);
     testing::internal::CaptureStderr();
 
     move(txt, 2, 30);

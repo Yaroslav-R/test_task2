@@ -3,14 +3,12 @@
 #include<fstream>
 #include<string>
 
-/* using namespace testing; */
 extern "C" {
 #include "../app/common.h"
 #include "../app/text.h"
 #include "../app/_text.h"
 }
 
-// char path_to_file[] = "./tests/test_input1.txt";
 
 TEST(showlastnonspace, suite1) {
     text txt = create_text();
@@ -34,7 +32,7 @@ TEST(showlastnonspace, suite2) {
 
 TEST(showlastnonspace, suite3) {
     text txt = create_text();
-    // fprintf(stderr,"length = %d\n", txt -> length);
+    
     testing::internal::CaptureStderr();
 
     showlastnonspace(txt);
@@ -48,7 +46,7 @@ TEST(showlastnonspace, suite3) {
 
 TEST(cb, suite1) {
     text txt = create_text();
-    // testing::internal::CaptureStdout();
+
     load(txt, "./tests/test_cb_input.txt");
     move(txt, 2, 0);
     cb(txt);
@@ -72,7 +70,6 @@ TEST(cb, suite1) {
 
 TEST(cb, suite2) {
     text txt = create_text();
-    // testing::internal::CaptureStdout();
     load(txt, "./tests/test_cb_input.txt");
     move(txt, 0, 0);
     cb(txt);
@@ -183,7 +180,6 @@ TEST(input_string, suite2) {
 
     move(txt, 0, 1);
     int code = input_string(txt, s);
-    // testing::internal::CaptureStderr();
     EXPECT_EQ(code, 1);
 
 

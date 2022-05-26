@@ -69,9 +69,6 @@ int input_string(text txt, char *str)
     char *data[2] = {code, str};
 
     process_forward(txt, input_line, (void*)data);
-    // printf("%d\n", (int)(*(data[0])));
-    // if ((int)(*(data[1]))) {
-        // fprintf(stderr, "\n");
-    // }
+
     return (int)(*(data[0]));
 }
